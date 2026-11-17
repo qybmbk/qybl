@@ -1,0 +1,36 @@
+---
+description: ailint 元规则（R001-R005）——用于审查 AGENTS.md/CLAUDE.md 等配置文件质量；来源 airulelint (PyPI) / blog.chibakuma.com，平台无关
+globs: ["**/AGENTS.md", "**/CLAUDE.md", "**/GEMINI.md", "**/.cursorrules", "**/.windsurfrules"]
+alwaysApply: false
+---
+
+# ailint 配置质量元规则（R001-R005）
+
+> 来源：airulelint（PyPI 包名，CLI 命令 `ailint`，作者 Makito Chiba，MIT）。
+> 仓库说明：https://pypi.org/project/airulelint/0.1.0/ · 原理：https://blog.chibakuma.com/ailint-config-rules-ignored
+> 元规则：针对 AGENTS.md / CLAUDE.md 等配置文件本身的质量，与具体 AI 平台无关。文本规则的執行率接近零，结构性缺陷应被检测。
+
+## R001 bloat（膨胀）
+- 文件 > 500 行告警，> 1000 行报错；单节 > 100 行告警。
+- 处置：超限即在源端拆分，把需强制执行的约束迁到 hook，不要把噪音留在配置里。
+
+## R002 vague-language（模糊措辞）
+- 不可强制的措辞视为缺陷："try to"、"when possible"、"盡量"、"適當" 等。
+- 定义语境豁免（如 "禁止：大概"）。
+- 处置：替换为具体条件、阈值或必需动作，否则删除。
+
+## R003 redundancy（冗余）
+- 段落间 TF-IDF 余弦相似度 > 70% 视为冗余；跳过父子段落对。
+- 处置：合并相似段落，避免同一规则多种措辞重复占用上下文。
+
+## R004 dead-reference（死引用）
+- 引用了不存在的本地路径为 error；过滤版本号、云 IAM 角色与通配符。
+- 处置：修正路径、补建被引用文件，或删除失效引用。
+
+## R005 contradiction（矛盾）
+- 关键词对冲突视为缺陷："always" vs "never"、"直接做" vs "先確認" 等。
+- 处置：澄清决定动作是自动还是需要确认的条件；语义级矛盾可用 `ailint --deep`。
+
+## 使用约定
+- 本文件是"审查配置质量"的元规则，按需加载（处理配置文件本身时），非常驻。
+- 与具体 AI 平台无关，保持原生 Markdown，不做格式转换。

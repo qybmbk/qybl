@@ -1,0 +1,35 @@
+---
+description: 通用 AI Agent 治理规则（read-before-write / minimal changes / verification before completion 等）；来源 agentrust-io/awesome-ai-governance 与 systempromptio/awesome-ai-agent-governance，框架无关
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# 通用 Agent 治理规则（framework-agnostic）
+
+> 来源：agentrust-io/awesome-ai-governance 与 systempromptio/awesome-ai-agent-governance（公开治理清单），
+> 核心规则提取为通用工程治理纪律，与具体框架/工具无关。参考：https://github.com/agentrust-io/awesome-ai-governance
+
+## read-before-write（写前先读）
+- 修改任何文件前先读取其内容与上下文，理解现有约定再动手。
+- 禁止凭猜测覆写；不确定时先定位真实路径与当前状态。
+
+## minimal changes（最小改动）
+- 只改完成任务所必需的部分；不做投机性重构、不引入无关抽象。
+- 优先复用项目内已有实现或标准库/已安装依赖；选择能解决问题的最小正确改动。
+
+## verification before completion（完成前验证）
+- 在宣称"完成/已修复/已通过"之前，运行相关检查、读取其输出并如实报告。
+- 给出可核验的证据（如 "34/34 pass, exit 0"），而不是"应该可以了"。
+- 修复缺陷后，重跑最初失败的场景。
+
+## 边界与安全
+- 未经用户明确要求，不删除文件、不重写 Git 历史、不 force-push、不放宽检查以让失败通过。
+- 敏感数据按最小暴露处理；工具权限遵循最小授权。
+- 需要无条件阻断的动作，用权限/hook/CI 强制，而非仅靠文本约定。
+
+## 审计与可追溯
+- 关键动作留下审计轨迹；策略检查应在不可逆动作之前触发。
+- 成本、权限、审计缺口按治理要求管控（参照 NIST AI RMF / OWASP Agentic Top 10 思路）。
+
+## 使用约定
+- 本文件为通用治理规则，适用于任何 agent framework；保持原生 Markdown，不做格式转换。
