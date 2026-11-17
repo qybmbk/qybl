@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "sourceDir": {
+    "cursor": {
+      "rules": ".cursor/rules",
+      "commands": ".cursor/commands",
+      "skills": ".cursor/skills",
+      "agents": ".cursor/agents"
+    },
+    "copilot": {
+      "instructions": ".github/instructions",
+      "skills": ".github/skills",
+      "prompts": ".github/prompts",
+      "agents": ".github/agents"
+    },
+    "claude": {
+      "skills": ".claude/skills",
+      "agents": ".claude/agents",
+      "rules": ".claude/rules",
+      "md": ".claude"
+    },
+    "trae": {
+      "rules": ".trae/rules",
+      "skills": ".trae/skills",
+      "agents": ".trae/agents",
+      "commands": ".trae/commands"
+    },
+    "opencode": {
+      "agents": ".opencode/agents",
+      "skills": ".opencode/skills",
+      "commands": ".opencode/commands",
+      "tools": ".opencode/tools",
+      "rules": ".opencode/rules"
+    },
+    "agents-md": {
+      "file": "."
+    },
+    "codex": {
+      "rules": ".codex/rules",
+      "skills": ".agents/skills",
+      "md": ".codex",
+      "agents": ".codex/agents"
+    },
+    "gemini": {
+      "commands": ".gemini/commands",
+      "skills": ".gemini/skills",
+      "agents": ".gemini/agents",
+      "md": ".gemini"
+    },
+    "warp": {
+      "skills": ".agents/skills"
+    },
+    "windsurf": {
+      "rules": ".windsurf/rules",
+      "skills": ".windsurf/skills",
+      "commands": ".windsurf/workflows"
+    },
+    "cline": {
+      "rules": ".clinerules",
+      "skills": ".cline/skills",
+      "commands": ".clinerules/workflows",
+      "agents": ".cline/agents"
+    },
+    "codebuddy": {
+      "rules": ".codebuddy/rules",
+      "skills": ".codebuddy/skills",
+      "commands": ".codebuddy/commands",
+      "md": ".codebuddy"
+    },
+    "pi": {
+      "skills": ".pi/skills",
+      "prompts": ".pi/prompts"
+    },
+    "antigravity-cli": {
+      "skills": ".agents/skills",
+      "workflows": ".agents/workflows"
+    },
+    "workbuddy": {
+      "skills": ".workbuddy/skills"
+    },
+    "deepseek": {
+      "skills": ".agents/skills"
+    },
+    "factorydroid": {
+      "skills": ".factory/skills",
+      "commands": ".factory/commands",
+      "agents": ".factory/droids"
+    },
+    "kimi": {
+      "skills": ".kimi-code/skills",
+      "agents": ".kimi-code/agents"
+    },
+    "kilo": {
+      "skills": ".kilo/skills",
+      "commands": ".kilo/commands",
+      "agents": ".kilo/agents"
+    },
+    "hermes": {
+      "skills": ".hermes/skills"
+    },
+    "junie": {
+      "skills": ".junie/skills",
+      "agents": ".junie/agents",
+      "commands": ".junie/commands",
+      "rules": ".junie/rules"
+    },
+    "kiro": {
+      "skills": ".kiro/skills",
+      "agents": ".kiro/agents",
+      "rules": ".kiro/steering"
+    },
+    "qwen": {
+      "skills": ".qwen/skills",
+      "agents": ".qwen/agents",
+      "commands": ".qwen/commands",
+      "rules": ".qwen/rules"
+    },
+    "augment": {
+      "skills": ".augment/skills",
+      "agents": ".augment/agents",
+      "commands": ".augment/commands",
+      "rules": ".augment/rules"
+    },
+    "deepagents": {
+      "skills": ".deepagents/skills",
+      "agents": ".deepagents/agents"
+    },
+    "continue": {
+      "skills": ".continue/skills",
+      "rules": ".continue/rules",
+      "prompts": ".continue/prompts"
+    },
+    "aider": {
+      "skills": ".aider/skills"
+    },
+    "zed": {
+      "skills": ".agents/skills"
+    },
+    "goose": {
+      "skills": ".goose/skills"
+    },
+    "amp": {
+      "skills": ".agents/skills"
+    }
+  }
+}
